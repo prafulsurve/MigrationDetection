@@ -13,5 +13,5 @@ This project is a WCF service which you can host on your Virtual Machine to iden
   2. setPingCounter(counter) - pings the landmarks for counter no. of times.
   3. setThreshold(threshold factor) - sets the threshold factor.
   4. calculateAvgLatency() - Calculates the average latencies.
-  5. calculateMinThreshold() - Caluclates the minimum threshold latency
-  6. calculateMaxThreshold() - Caluclate the maximum threshold latency
+  5. calculateMinThreshold() - Calculates the minimum threshold latency
+  6. calculateMaxThreshold() - Calculate the maximum threshold latency
