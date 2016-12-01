@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Detect" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://migration.com:8080/Detect.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://migration.com:8080/Detect.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://migration.com:8080/Detect.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDetect_setLandMark_InputMessage">
+    <wsdl:part name="parameters" element="tns:setLandMark" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_setLandMark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setLandMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_setPingCounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPingCounter" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_setPingCounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPingCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_resetPingCounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:resetPingCounter" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_resetPingCounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resetPingCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_setThreshold_InputMessage">
+    <wsdl:part name="parameters" element="tns:setThreshold" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_setThreshold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setThresholdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_calculateAvgLatency_InputMessage">
+    <wsdl:part name="parameters" element="tns:calculateAvgLatency" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_calculateAvgLatency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:calculateAvgLatencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_calculateMinThreshold_InputMessage">
+    <wsdl:part name="parameters" element="tns:calculateMinThreshold" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_calculateMinThreshold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:calculateMinThresholdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_calculateMaxThreshold_InputMessage">
+    <wsdl:part name="parameters" element="tns:calculateMaxThreshold" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_calculateMaxThreshold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:calculateMaxThresholdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_reCalculateAvgLatency_InputMessage">
+    <wsdl:part name="parameters" element="tns:reCalculateAvgLatency" />
+  </wsdl:message>
+  <wsdl:message name="IDetect_reCalculateAvgLatency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:reCalculateAvgLatencyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDetect">
+    <wsdl:operation name="setLandMark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/setLandMark" message="tns:IDetect_setLandMark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/setLandMarkResponse" message="tns:IDetect_setLandMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setPingCounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/setPingCounter" message="tns:IDetect_setPingCounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/setPingCounterResponse" message="tns:IDetect_setPingCounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="resetPingCounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/resetPingCounter" message="tns:IDetect_resetPingCounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/resetPingCounterResponse" message="tns:IDetect_resetPingCounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setThreshold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/setThreshold" message="tns:IDetect_setThreshold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/setThresholdResponse" message="tns:IDetect_setThreshold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="calculateAvgLatency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/calculateAvgLatency" message="tns:IDetect_calculateAvgLatency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/calculateAvgLatencyResponse" message="tns:IDetect_calculateAvgLatency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="calculateMinThreshold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/calculateMinThreshold" message="tns:IDetect_calculateMinThreshold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/calculateMinThresholdResponse" message="tns:IDetect_calculateMinThreshold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="calculateMaxThreshold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/calculateMaxThreshold" message="tns:IDetect_calculateMaxThreshold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/calculateMaxThresholdResponse" message="tns:IDetect_calculateMaxThreshold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="reCalculateAvgLatency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetect/reCalculateAvgLatency" message="tns:IDetect_reCalculateAvgLatency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetect/reCalculateAvgLatencyResponse" message="tns:IDetect_reCalculateAvgLatency_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDetect" type="tns:IDetect">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setLandMark">
+      <soap:operation soapAction="http://tempuri.org/IDetect/setLandMark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPingCounter">
+      <soap:operation soapAction="http://tempuri.org/IDetect/setPingCounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPingCounter">
+      <soap:operation soapAction="http://tempuri.org/IDetect/resetPingCounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setThreshold">
+      <soap:operation soapAction="http://tempuri.org/IDetect/setThreshold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateAvgLatency">
+      <soap:operation soapAction="http://tempuri.org/IDetect/calculateAvgLatency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateMinThreshold">
+      <soap:operation soapAction="http://tempuri.org/IDetect/calculateMinThreshold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateMaxThreshold">
+      <soap:operation soapAction="http://tempuri.org/IDetect/calculateMaxThreshold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reCalculateAvgLatency">
+      <soap:operation soapAction="http://tempuri.org/IDetect/reCalculateAvgLatency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Detect">
+    <wsdl:port name="BasicHttpBinding_IDetect" binding="tns:BasicHttpBinding_IDetect">
+      <soap:address location="http://migration.com:8080/Detect.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
