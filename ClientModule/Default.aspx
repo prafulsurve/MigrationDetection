@@ -54,7 +54,7 @@
             </tr>
             </table>
             <br />
-            <asp:Button ID="Button2" runat="server" Text="Re-Calcualte Latencies" Width="220px" Height="50px" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button_Recalculate" Text="Re-Calcualte Latencies" Width="220px" Height="50px" />
             Set Ping Counter:
             <asp:TextBox ID="setPC2" runat="server" Width="67px" Height="39px"></asp:TextBox>
             <br />

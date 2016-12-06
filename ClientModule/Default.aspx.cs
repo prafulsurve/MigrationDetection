@@ -1,12 +1,12 @@
-﻿using System;
+﻿using ServiceReferenceMigration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MigrationServiceReference;
-using System.Threading;
-using System.Threading.Tasks;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -41,8 +41,13 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-       
+
         proxy.setPingCounter(Int32.Parse(setPC1.Text));
+        latencyCalculator();
+    }
+
+    private void latencyCalculator()
+    {
         proxy.setThreshold(float.Parse(text_threshold.Text));
         proxy.setLandMark(text_LM1.Text, textLM2.Text, textLM3.Text);
         double[] avg = proxy.calculateAvgLatency();
@@ -59,6 +64,12 @@ public partial class _Default : System.Web.UI.Page
         tmax2.Text = "" + t_max[1] + " ms";
         tmax3.Text = "" + t_max[2] + " ms";
         //proxy.Close();
+    }
+
+    protected void Button_Recalculate(object sender, EventArgs e)
+    {
+        proxy.setPingCounter(Int32.Parse(setPC2.Text));
+        latencyCalculator();
     }
     async Task sleep()
     {
