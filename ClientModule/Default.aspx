@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Migration Detection</title>
+    <title>Virtual Machine Migration Detection</title>
 </head>
 <body>
     <form id="form1" runat="server">
