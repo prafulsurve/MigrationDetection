@@ -21,6 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Migration Detection", "Migr
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50085"
+		SlnRelativePath = "Migration Detection\"
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ClientModule", "ClientModule\", "{0C294242-8161-410B-A5FF-5B31024577A6}"
@@ -41,6 +42,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ClientModule", "ClientModul
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50087"
+		SlnRelativePath = "ClientModule\"
 	EndProjectSection
 EndProject
 Global
