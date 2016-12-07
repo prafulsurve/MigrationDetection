@@ -16,6 +16,7 @@ public class Detect : IDetect
     double threshold;
     double[] avgLatency;
     double[] avgLatency2;
+    double[] finalAvgLatency2;
     double[] minThreshold;
     double[] maxThreshold;
     public void setLandMark(string lm1, string lm2, string lm3)
@@ -85,6 +86,7 @@ public class Detect : IDetect
     public double[] reCalculateAvgLatency()
     {
         avgLatency2 = new double[3] { 0, 0, 0 };
+        finalAvgLatency2 = new double[3] { 0, 0, 0};
         Ping pingSender = new Ping();
         PingOptions options = new PingOptions();
         PingReply reply;
@@ -92,19 +94,28 @@ public class Detect : IDetect
         string data = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         int timeout = 120;
         byte[] buffer = Encoding.ASCII.GetBytes(data);
-        for (int i = 0; i < pingCounter2; i++)
+        for (int i = 0; i < 3; i++)
         {
-            reply = pingSender.Send(landMark1, timeout, buffer, options);
-            avgLatency2[0] = avgLatency2[0] + reply.RoundtripTime;
+            for (int j = 0; j < pingCounter2; j++)
+            {
+                reply = pingSender.Send(landMark1, timeout, buffer, options);
+                avgLatency2[0] = avgLatency2[0] + reply.RoundtripTime;
 
-            reply = pingSender.Send(landMark2, timeout, buffer, options);
-            avgLatency2[1] = avgLatency2[1] + reply.RoundtripTime;
+                reply = pingSender.Send(landMark2, timeout, buffer, options);
+                avgLatency2[1] = avgLatency2[1] + reply.RoundtripTime;
 
-            reply = pingSender.Send(landMark3, timeout, buffer, options);
-            avgLatency2[2] = avgLatency2[2] + reply.RoundtripTime;
+                reply = pingSender.Send(landMark3, timeout, buffer, options);
+                avgLatency2[2] = avgLatency2[2] + reply.RoundtripTime;
+            }
+            for (int k = 0; k < 3; k++)
+            {
+                avgLatency2[k] = avgLatency2[k] / pingCounter2;
+                finalAvgLatency2[k] = finalAvgLatency2[k] + avgLatency2[k];
+                avgLatency2[k] = 0;
+            }
         }
         for (int i = 0; i < 3; i++)
-            avgLatency2[i] = avgLatency2[i] / pingCounter2;
-        return (avgLatency2);
+            finalAvgLatency2[i] = finalAvgLatency2[i] / 3;
+        return (finalAvgLatency2);
     }
 }

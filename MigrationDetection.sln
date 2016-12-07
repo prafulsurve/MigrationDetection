@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Migration Detection", "Migration Detection\", "{8D81FA28-A076-459B-B8A2-D584B4F68DC6}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Migration Detection", "Migration Detection\", "{C03D88B3-AD17-41A1-BC6E-8DBDBA49FB0A}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50085"
@@ -24,7 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Migration Detection", "Migr
 		SlnRelativePath = "Migration Detection\"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ClientModule", "ClientModule\", "{0C294242-8161-410B-A5FF-5B31024577A6}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ClientModule", "ClientModule\", "{6CDDF465-B34E-4546-94AE-8FA9DE08ABD8}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50087"
@@ -50,10 +50,10 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8D81FA28-A076-459B-B8A2-D584B4F68DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D81FA28-A076-459B-B8A2-D584B4F68DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C294242-8161-410B-A5FF-5B31024577A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C294242-8161-410B-A5FF-5B31024577A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03D88B3-AD17-41A1-BC6E-8DBDBA49FB0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03D88B3-AD17-41A1-BC6E-8DBDBA49FB0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDDF465-B34E-4546-94AE-8FA9DE08ABD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDDF465-B34E-4546-94AE-8FA9DE08ABD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
