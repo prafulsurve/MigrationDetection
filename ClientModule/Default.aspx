@@ -19,10 +19,10 @@
             <table>
             <tr>
             <th></th>
-            <th><asp:Label ID="Label1" runat="server" Text="Avg. Latency1"></asp:Label></th>
+            <th><asp:Label ID="Label1" runat="server" Text="Avg. Latency 1"></asp:Label></th>
             <th><asp:Label ID="Label2" runat="server" Text=" T. min"></asp:Label></th>
             <th><asp:Label ID="Label3" runat="server" Text=" T.max"></asp:Label></th>
-            <th><asp:Label ID="Label4" runat="server" Text="Avg. Latency2"></asp:Label></th>
+            <th><asp:Label ID="Label4" runat="server" Text="Avg. Latency 2"></asp:Label></th>
             <th></th>
             </tr>
             <tr>
@@ -32,7 +32,7 @@
             <td><asp:TextBox ID="tmin1" runat="server" Width="70px" Height="40px"></asp:TextBox></td>
             <td><asp:TextBox ID="tmax1" runat="server" Width="70px" Height="40px"></asp:TextBox></td>
             <td><asp:TextBox ID="avgLatency21" runat="server" Width="135px" Height="40px" AutoPostBack="True"></asp:TextBox></td>
-            <td><asp:Button ID="CalcLatency" runat="server" OnClick="Button1_Click" Text="Calcualte Latency" Width="287px" Height="49px" /></td>
+            <td><asp:Button ID="CalcLatency" runat="server" OnClick="Button1_Click" Text="Calculate Latency 1" Width="287px" Height="49px" /></td>
             </tr>
             <tr>
             <td>LM2:
@@ -41,7 +41,7 @@
             <td><asp:TextBox ID="tmin2" runat="server" Width="70px" Height="40px"></asp:TextBox></td>
             <td><asp:TextBox ID="tmax2" runat="server" Width="70px" Height="40px"></asp:TextBox></td>
             <td><asp:TextBox ID="avgLatency22" runat="server" Width="135px" Height="40px" AutoPostBack="True"></asp:TextBox></td>
-            <td></td>
+            <td><asp:Button ID="Button2" runat="server" OnClick="Button_Recalculate" Text="Calculate Latency 2" Width="287px" Height="49px" /></td>
             </tr>
             <tr>
             <td>LM3:
@@ -54,8 +54,7 @@
             </tr>
             </table>
             <br />
-            <asp:Button ID="Button2" runat="server" OnClick="Button_Recalculate" Text="Re-Calcualte Latencies" Width="220px" Height="50px" />
-            Set Ping Counter:
+<%--            Set Ping Counter:
             <asp:TextBox ID="setPC2" runat="server" Width="67px" Height="39px"></asp:TextBox>
             <br />
             <br />
@@ -64,7 +63,7 @@
             <br />
             <br />
             <span></span>Time Interval<asp:TextBox ID="text_timeInterval" runat="server" Height="24px" Width="58px"></asp:TextBox>
-            <br />
+            <br />--%>
         </div>
     </form>
 </body>
