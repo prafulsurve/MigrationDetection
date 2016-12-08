@@ -15,6 +15,7 @@ public class Detect : IDetect
     int pingCounter2;
     double threshold;
     double[] avgLatency;
+    double[] finalAvgLatency;
     double[] avgLatency2;
     double[] finalAvgLatency2;
     double[] minThreshold;
@@ -42,7 +43,8 @@ public class Detect : IDetect
     }
 
     public double[] calculateAvgLatency()
-    { 
+    {
+        finalAvgLatency = new double[3] { 0, 0, 0 };
         avgLatency = new double[3] { 0, 0, 0 };
         Ping pingSender = new Ping();
         PingOptions options = new PingOptions();
@@ -51,27 +53,36 @@ public class Detect : IDetect
         string data = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         int timeout = 120;
         byte[] buffer = Encoding.ASCII.GetBytes(data);
-        for (int i = 0; i < pingCounter; i++)
+        for (int i = 0; i < 3; i++)
         {
-            reply = pingSender.Send(landMark1, timeout, buffer, options);
-            avgLatency[0] = avgLatency[0] + reply.RoundtripTime;
+            for (int j = 0; j < pingCounter; j++)
+            {
+                reply = pingSender.Send(landMark1, timeout, buffer, options);
+                avgLatency[0] = avgLatency[0] + reply.RoundtripTime;
 
-            reply = pingSender.Send(landMark2, timeout, buffer, options);
-            avgLatency[1] = avgLatency[1] + reply.RoundtripTime;
+                reply = pingSender.Send(landMark2, timeout, buffer, options);
+                avgLatency[1] = avgLatency[1] + reply.RoundtripTime;
 
-            reply = pingSender.Send(landMark3, timeout, buffer, options);
-            avgLatency[2] = avgLatency[2] + reply.RoundtripTime;
+                reply = pingSender.Send(landMark3, timeout, buffer, options);
+                avgLatency[2] = avgLatency[2] + reply.RoundtripTime;
+            }
+            for (int k = 0; k < 3; k++)
+            {
+                avgLatency[k] = avgLatency[k] / pingCounter;
+                finalAvgLatency[k] = finalAvgLatency[k] + avgLatency[k];
+                avgLatency[k] = 0;
+            }
         }
         for (int i = 0; i < 3; i++)
-            avgLatency[i] = avgLatency[i] / pingCounter;
-        return (avgLatency);
+            finalAvgLatency[i] = finalAvgLatency[i] / 3;
+        return (finalAvgLatency);
     }
 
     public double[] calculateMinThreshold()
     {
         minThreshold = new double[3];
         for (int i = 0; i < 3; i++)
-            minThreshold[i] = avgLatency[i] - avgLatency[i] * threshold;
+            minThreshold[i] = finalAvgLatency[i] - finalAvgLatency[i] * threshold;
         return (minThreshold);
     }
 
@@ -79,7 +90,7 @@ public class Detect : IDetect
     {
         maxThreshold = new double[3];
         for (int i = 0; i < 3; i++)
-            maxThreshold[i] = avgLatency[i] + avgLatency[i] * threshold;
+            maxThreshold[i] = finalAvgLatency[i] + finalAvgLatency[i] * threshold;
         return (maxThreshold);
     }
 
